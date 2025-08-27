@@ -143,6 +143,11 @@ def index():
     """Serve the main HTML page"""
     return render_template_string(open('alignment_news.html').read())
 
+@app.route('/multi-source')
+def multi_source():
+    """Serve the multi-source HTML page"""
+    return render_template_string(open('multi_source_news.html').read())
+
 @app.route('/api/scrape', methods=['GET'])
 def scrape_endpoint():
     """API endpoint to scrape news"""
@@ -169,6 +174,20 @@ def status():
         "last_scrape": getattr(scraper, 'last_scrape', None),
         "base_url": scraper.base_url
     })
+
+@app.route('/api/universal-scrape', methods=['GET'])
+def universal_scrape():
+    """Universal scraper endpoint for all AI news sources"""
+    try:
+        # Import the universal scraper
+        from universal_ai_scraper import UniversalAIScraper
+        
+        universal_scraper = UniversalAIScraper()
+        news_data = universal_scraper.scrape_all_sources()
+        
+        return jsonify(news_data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     print("🚀 Starting AI Alignment Forum News Scraper...")

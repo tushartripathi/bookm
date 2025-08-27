@@ -1,0 +1,550 @@
+{
+  "success": true,
+  "total_sources": 4,
+  "total_articles": 28,
+  "sources": {
+    "ai_alignment_forum": {
+      "success": true,
+      "source": "https://www.alignmentforum.org/",
+      "source_name": "AI Alignment Forum",
+      "total_articles": 10,
+      "articles": [
+        {
+          "title": "Welcome & FAQ!",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/Yp2vYb4zHXEeoTkJc/welcome-and-faq",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.097859"
+        },
+        {
+          "title": "Attaching requirements to model releases has serious downsides (relative to a different deadline for these requirements)",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/Eh7WdKTrpLch5Kvkz/attaching-requirements-to-model-releases-has-serious",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.097894"
+        },
+        {
+          "title": "AI companies have started saying safeguards are load-bearing",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/Bz2gPtqRJJDWyKxnX/ai-companies-have-started-saying-safeguards-are-load-bearing",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.097921"
+        },
+        {
+          "title": "New Paper on Reflective Oracles & Grain of Truth Problem",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/PuGxDb27xhRPBPbiv/new-paper-on-reflective-oracles-and-grain-of-truth-problem",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.097942"
+        },
+        {
+          "title": "Notes on cooperating with unaligned AIs",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/oLzoHA9ZtF2ygYgx4/notes-on-cooperating-with-unaligned-ais",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.097963"
+        },
+        {
+          "title": "One more reason for AI capable of independent moral reasoning: alignment itself and cause prioritisation",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/tYCinFKtbBEg42gy9/one-more-reason-for-ai-capable-of-independent-moral",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.097984"
+        },
+        {
+          "title": "Doing good... best?",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/3EqToCdzMXcmKd2ct/doing-good-best",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.098004"
+        },
+        {
+          "title": "With enough knowledge, any conscious agent acts morally",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/EbRLty44fFtoWduj4/with-enough-knowledge-any-conscious-agent-acts-morally",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.098025"
+        },
+        {
+          "title": "An Introduction to Credal Sets and Infra-Bayes Learnability",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/rkhaRnAc6dLzQT2sJ/an-introduction-to-credal-sets-and-infra-bayes-learnability-1",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.098045"
+        },
+        {
+          "title": "Proof Section to an Introduction to Credal Sets and Infra-Bayes Learnability",
+          "author": "Unknown",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.alignmentforum.org/posts/pFtCk9xezCssuzvjs/proof-section-to-an-introduction-to-credal-sets-and-infra",
+          "source": "AI Alignment Forum",
+          "scraped_at": "2025-08-27T23:47:23.098068"
+        }
+      ],
+      "scraped_at": "2025-08-27T23:47:23.098069"
+    },
+    "mit_news": {
+      "success": true,
+      "source": "https://news.mit.edu/topic/artificial-intelligence2",
+      "source_name": "MIT News AI",
+      "total_articles": 7,
+      "articles": [
+        {
+          "title": "MIT News | Massachusetts Institute of Technology",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.057992"
+        },
+        {
+          "title": "Simpler models can outperform deep learning at climate prediction",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/2025/simpler-models-can-outperform-deep-learning-climate-prediction-0826",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.058029"
+        },
+        {
+          "title": "Simpler models can outperform deep learning at climate prediction",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/2025/simpler-models-can-outperform-deep-learning-climate-prediction-0826",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.058068"
+        },
+        {
+          "title": "New technologies tackle brain health assessment for the military",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/2025/new-technologies-tackle-brain-health-assessment-for-military-0825",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.058088"
+        },
+        {
+          "title": "New technologies tackle brain health assessment for the military",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/2025/new-technologies-tackle-brain-health-assessment-for-military-0825",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.058118"
+        },
+        {
+          "title": "Can large language models figure out the real world?",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/2025/can-large-language-models-figure-out-real-world-0825",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.058140"
+        },
+        {
+          "title": "Can large language models figure out the real world?",
+          "author": "MIT News",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://news.mit.edu/2025/can-large-language-models-figure-out-real-world-0825",
+          "source": "MIT News AI",
+          "scraped_at": "2025-08-27T23:47:24.058170"
+        }
+      ],
+      "scraped_at": "2025-08-27T23:47:24.058171"
+    },
+    "towards_ai": {
+      "success": true,
+      "source": "https://towardsai.net/p",
+      "source_name": "Towards AI",
+      "total_articles": 6,
+      "articles": [
+        {
+          "title": "Use your own customized open-source Large Language Model",
+          "author": "Towards AI",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://towardsai.net/p/l/use-your-own-customized-open-source-large-language-model",
+          "source": "Towards AI",
+          "scraped_at": "2025-08-27T23:47:25.773611"
+        },
+        {
+          "title": "Use your own customized open-source Large Language Model",
+          "author": "Towards AI",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://towardsai.net/p/l/use-your-own-customized-open-source-large-language-model",
+          "source": "Towards AI",
+          "scraped_at": "2025-08-27T23:47:25.773651"
+        },
+        {
+          "title": "Use your own customized open-source Large Language Model",
+          "author": "Towards AI",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://towardsai.net/p/l/use-your-own-customized-open-source-large-language-model",
+          "source": "Towards AI",
+          "scraped_at": "2025-08-27T23:47:25.773679"
+        },
+        {
+          "title": "Use your own customized open-source Large Language Model",
+          "author": "Towards AI",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://towardsai.net/ai/l",
+          "source": "Towards AI",
+          "scraped_at": "2025-08-27T23:47:25.773717"
+        },
+        {
+          "title": "Taha Azizi",
+          "author": "Towards AI",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://towardsai.net/p/author/tahaazizi",
+          "source": "Towards AI",
+          "scraped_at": "2025-08-27T23:47:25.773781"
+        },
+        {
+          "title": "Taha Azizi",
+          "author": "Towards AI",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://towardsai.net/p/author/tahaazizi",
+          "source": "Towards AI",
+          "scraped_at": "2025-08-27T23:47:25.773876"
+        }
+      ],
+      "scraped_at": "2025-08-27T23:47:25.773900"
+    },
+    "marktechpost": {
+      "success": true,
+      "source": "https://www.marktechpost.com/",
+      "source_name": "MarkTechPost",
+      "total_articles": 5,
+      "articles": [
+        {
+          "title": "Premium Content",
+          "author": "MarkTechPost",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.marktechpost.com#",
+          "source": "MarkTechPost",
+          "scraped_at": "2025-08-27T23:47:31.481790"
+        },
+        {
+          "title": "Read our exclusive articles",
+          "author": "MarkTechPost",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.marktechpost.com#",
+          "source": "MarkTechPost",
+          "scraped_at": "2025-08-27T23:47:31.481832"
+        },
+        {
+          "title": "Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B",
+          "author": "MarkTechPost",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/",
+          "source": "MarkTechPost",
+          "scraped_at": "2025-08-27T23:47:31.482020"
+        },
+        {
+          "title": "Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B",
+          "author": "MarkTechPost",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/",
+          "source": "MarkTechPost",
+          "scraped_at": "2025-08-27T23:47:31.482067"
+        },
+        {
+          "title": "Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B",
+          "author": "MarkTechPost",
+          "date": "Unknown",
+          "excerpt": "",
+          "link": "https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/",
+          "source": "MarkTechPost",
+          "scraped_at": "2025-08-27T23:47:31.482109"
+        }
+      ],
+      "scraped_at": "2025-08-27T23:47:31.482111"
+    }
+  },
+  "combined_articles": [
+    {
+      "title": "Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B",
+      "author": "MarkTechPost",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/",
+      "source": "MarkTechPost",
+      "scraped_at": "2025-08-27T23:47:31.482109"
+    },
+    {
+      "title": "Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B",
+      "author": "MarkTechPost",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/",
+      "source": "MarkTechPost",
+      "scraped_at": "2025-08-27T23:47:31.482067"
+    },
+    {
+      "title": "Meta AI Introduces DeepConf: First AI Method to Achieve 99.9% on AIME 2025 with Open-Source Models Using GPT-OSS-120B",
+      "author": "MarkTechPost",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.marktechpost.com/2025/08/27/meta-ai-introduces-deepconf-first-ai-method-to-achieve-99-9-on-aime-2025-with-open-source-models-using-gpt-oss-120b/",
+      "source": "MarkTechPost",
+      "scraped_at": "2025-08-27T23:47:31.482020"
+    },
+    {
+      "title": "Read our exclusive articles",
+      "author": "MarkTechPost",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.marktechpost.com#",
+      "source": "MarkTechPost",
+      "scraped_at": "2025-08-27T23:47:31.481832"
+    },
+    {
+      "title": "Premium Content",
+      "author": "MarkTechPost",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.marktechpost.com#",
+      "source": "MarkTechPost",
+      "scraped_at": "2025-08-27T23:47:31.481790"
+    },
+    {
+      "title": "Taha Azizi",
+      "author": "Towards AI",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://towardsai.net/p/author/tahaazizi",
+      "source": "Towards AI",
+      "scraped_at": "2025-08-27T23:47:25.773876"
+    },
+    {
+      "title": "Taha Azizi",
+      "author": "Towards AI",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://towardsai.net/p/author/tahaazizi",
+      "source": "Towards AI",
+      "scraped_at": "2025-08-27T23:47:25.773781"
+    },
+    {
+      "title": "Use your own customized open-source Large Language Model",
+      "author": "Towards AI",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://towardsai.net/ai/l",
+      "source": "Towards AI",
+      "scraped_at": "2025-08-27T23:47:25.773717"
+    },
+    {
+      "title": "Use your own customized open-source Large Language Model",
+      "author": "Towards AI",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://towardsai.net/p/l/use-your-own-customized-open-source-large-language-model",
+      "source": "Towards AI",
+      "scraped_at": "2025-08-27T23:47:25.773679"
+    },
+    {
+      "title": "Use your own customized open-source Large Language Model",
+      "author": "Towards AI",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://towardsai.net/p/l/use-your-own-customized-open-source-large-language-model",
+      "source": "Towards AI",
+      "scraped_at": "2025-08-27T23:47:25.773651"
+    },
+    {
+      "title": "Use your own customized open-source Large Language Model",
+      "author": "Towards AI",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://towardsai.net/p/l/use-your-own-customized-open-source-large-language-model",
+      "source": "Towards AI",
+      "scraped_at": "2025-08-27T23:47:25.773611"
+    },
+    {
+      "title": "Can large language models figure out the real world?",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/can-large-language-models-figure-out-real-world-0825",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.058170"
+    },
+    {
+      "title": "Can large language models figure out the real world?",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/can-large-language-models-figure-out-real-world-0825",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.058140"
+    },
+    {
+      "title": "New technologies tackle brain health assessment for the military",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/new-technologies-tackle-brain-health-assessment-for-military-0825",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.058118"
+    },
+    {
+      "title": "New technologies tackle brain health assessment for the military",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/new-technologies-tackle-brain-health-assessment-for-military-0825",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.058088"
+    },
+    {
+      "title": "Simpler models can outperform deep learning at climate prediction",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/simpler-models-can-outperform-deep-learning-climate-prediction-0826",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.058068"
+    },
+    {
+      "title": "Simpler models can outperform deep learning at climate prediction",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/simpler-models-can-outperform-deep-learning-climate-prediction-0826",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.058029"
+    },
+    {
+      "title": "MIT News | Massachusetts Institute of Technology",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/",
+      "source": "MIT News AI",
+      "scraped_at": "2025-08-27T23:47:24.057992"
+    },
+    {
+      "title": "Proof Section to an Introduction to Credal Sets and Infra-Bayes Learnability",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/pFtCk9xezCssuzvjs/proof-section-to-an-introduction-to-credal-sets-and-infra",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.098068"
+    },
+    {
+      "title": "An Introduction to Credal Sets and Infra-Bayes Learnability",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/rkhaRnAc6dLzQT2sJ/an-introduction-to-credal-sets-and-infra-bayes-learnability-1",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.098045"
+    },
+    {
+      "title": "With enough knowledge, any conscious agent acts morally",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/EbRLty44fFtoWduj4/with-enough-knowledge-any-conscious-agent-acts-morally",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.098025"
+    },
+    {
+      "title": "Doing good... best?",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/3EqToCdzMXcmKd2ct/doing-good-best",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.098004"
+    },
+    {
+      "title": "One more reason for AI capable of independent moral reasoning: alignment itself and cause prioritisation",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/tYCinFKtbBEg42gy9/one-more-reason-for-ai-capable-of-independent-moral",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.097984"
+    },
+    {
+      "title": "Notes on cooperating with unaligned AIs",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/oLzoHA9ZtF2ygYgx4/notes-on-cooperating-with-unaligned-ais",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.097963"
+    },
+    {
+      "title": "New Paper on Reflective Oracles & Grain of Truth Problem",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/PuGxDb27xhRPBPbiv/new-paper-on-reflective-oracles-and-grain-of-truth-problem",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.097942"
+    },
+    {
+      "title": "AI companies have started saying safeguards are load-bearing",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/Bz2gPtqRJJDWyKxnX/ai-companies-have-started-saying-safeguards-are-load-bearing",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.097921"
+    },
+    {
+      "title": "Attaching requirements to model releases has serious downsides (relative to a different deadline for these requirements)",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/Eh7WdKTrpLch5Kvkz/attaching-requirements-to-model-releases-has-serious",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.097894"
+    },
+    {
+      "title": "Welcome & FAQ!",
+      "author": "Unknown",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/Yp2vYb4zHXEeoTkJc/welcome-and-faq",
+      "source": "AI Alignment Forum",
+      "scraped_at": "2025-08-27T23:47:23.097859"
+    }
+  ],
+  "scraped_at": "2025-08-27T23:47:31.482945"
+}

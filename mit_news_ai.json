@@ -1,0 +1,98 @@
+{
+  "success": true,
+  "source": "https://news.mit.edu/topic/artificial-intelligence2",
+  "total_articles": 10,
+  "articles": [
+    {
+      "title": "MIT News | Massachusetts Institute of Technology",
+      "author": "MIT News",
+      "date": "Unknown",
+      "excerpt": "",
+      "link": "https://news.mit.edu/",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.752757"
+    },
+    {
+      "title": "Simpler models can outperform deep learning at climate prediction",
+      "author": "MIT News",
+      "date": "August 26, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/simpler-models-can-outperform-deep-learning-climate-prediction-0826",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.753217"
+    },
+    {
+      "title": "Simpler models can outperform deep learning at climate prediction",
+      "author": "MIT News",
+      "date": "August 26, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/simpler-models-can-outperform-deep-learning-climate-prediction-0826",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.753520"
+    },
+    {
+      "title": "New technologies tackle brain health assessment for the military",
+      "author": "MIT News",
+      "date": "August 25, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/new-technologies-tackle-brain-health-assessment-for-military-0825",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.753794"
+    },
+    {
+      "title": "New technologies tackle brain health assessment for the military",
+      "author": "MIT News",
+      "date": "August 25, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/new-technologies-tackle-brain-health-assessment-for-military-0825",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.754096"
+    },
+    {
+      "title": "Can large language models figure out the real world?",
+      "author": "MIT News",
+      "date": "August 25, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/can-large-language-models-figure-out-real-world-0825",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.754365"
+    },
+    {
+      "title": "Can large language models figure out the real world?",
+      "author": "MIT News",
+      "date": "August 25, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/can-large-language-models-figure-out-real-world-0825",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.754595"
+    },
+    {
+      "title": "A new model predicts how molecules will dissolve in different solvents",
+      "author": "MIT News",
+      "date": "August 19, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/new-model-predicts-how-molecules-will-dissolve-in-different-solvents-0819",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.754928"
+    },
+    {
+      "title": "A new model predicts how molecules will dissolve in different solvents",
+      "author": "MIT News",
+      "date": "August 19, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/new-model-predicts-how-molecules-will-dissolve-in-different-solvents-0819",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.755212"
+    },
+    {
+      "title": "Researchers glimpse the inner workings of protein language models",
+      "author": "MIT News",
+      "date": "August 18, 2025",
+      "excerpt": "",
+      "link": "https://news.mit.edu/2025/researchers-glimpse-inner-workings-protein-language-models-0818",
+      "source": "MIT News",
+      "scraped_at": "2025-08-27T23:39:58.755535"
+    }
+  ],
+  "scraped_at": "2025-08-27T23:39:58.755587"
+}

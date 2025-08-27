@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Source AI News Aggregator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2d3748 100%);
+      color: #e2e8f0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .header h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .header p {
+      color: #bfdbfe;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .controls {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .controls h3 {
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+    }
+    
+    .btn:disabled {
+      background: #6b7280;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    .btn-secondary {
+      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    }
+    
+    .btn-secondary:hover {
+      box-shadow: 0 4px 16px rgba(107,114,128,0.4);
+    }
+    
+    .source-selector {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    
+    .source-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .source-checkbox input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #3b82f6;
+    }
+    
+    .filter-controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .filter-input {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      color: #e2e8f0;
+      font-size: 1rem;
+    }
+    
+    .filter-input::placeholder {
+      color: #94a3b8;
+    }
+    
+    .status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    
+    .status.loading {
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: #60a5fa;
+    }
+    
+    .status.success {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #4ade80;
+    }
+    
+    .status.error {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: #f87171;
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #60a5fa;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .news-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .news-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    }
+    
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-color: rgba(59,130,246,0.3);
+    }
+    
+    .news-source {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(59,130,246,0.2);
+      color: #60a5fa;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .news-title {
+      color: #60a5fa;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      margin-top: 1.5rem;
+    }
+    
+    .news-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      flex-wrap: wrap;
+    }
+    
+    .news-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .news-excerpt {
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .news-link {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .news-link:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: #94a3b8;
+    }
+    
+    .empty-state h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #cbd5e1;
+    }
+    
+    .source-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .source-stat {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    
+    .source-name {
+      color: #60a5fa;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .source-count {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4ade80;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .button-group, .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .btn {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🤖 Multi-Source AI News Aggregator</h1>
+    <p>Latest AI news from multiple sources in one place</p>
+  </div>
+  
+  <div class="container">
+    <div class="controls">
+      <h3>📡 News Controls</h3>
+      
+      <div class="source-selector">
+        <label class="source-checkbox">
+          <input type="checkbox" value="ai_alignment_forum" checked> AI Alignment Forum
+        </label>
+        <label class="source-checkbox">
+          <input type="checkbox" value="mit_news" checked> MIT News AI
+        </label>
+        <label class="source-checkbox">
+          <input type="checkbox" value="towards_ai" checked> Towards AI
+        </label>
+        <label class="source-checkbox">
+          <input type="checkbox" value="marktechpost" checked> MarkTechPost
+        </label>
+      </div>
+      
+      <div class="button-group">
+        <button class="btn" onclick="scrapeAllSources()">
+          <span id="scrape-text">🔍 Scrape All Sources</span>
+        </button>
+        <button class="btn btn-secondary" onclick="loadFromFile()">
+          📁 Load from File
+        </button>
+        <button class="btn btn-secondary" onclick="clearNews()">
+          🗑️ Clear News
+        </button>
+        <button class="btn btn-secondary" onclick="exportToJSON()">
+          💾 Export to JSON
+        </button>
+      </div>
+      
+      <div class="filter-controls">
+        <input type="text" id="search-filter" class="filter-input" placeholder="🔍 Search articles..." oninput="filterNews()">
+        <select id="source-filter" class="filter-input" onchange="filterNews()">
+          <option value="">All Sources</option>
+          <option value="AI Alignment Forum">AI Alignment Forum</option>
+          <option value="MIT News AI">MIT News AI</option>
+          <option value="Towards AI">Towards AI</option>
+          <option value="MarkTechPost">MarkTechPost</option>
+        </select>
+        <button class="btn btn-secondary" onclick="clearFilters()">Clear Filters</button>
+      </div>
+      
+      <div id="status" class="status" style="display: none;"></div>
+    </div>
+    
+    <div id="stats" class="stats" style="display: none;">
+      <div class="stat-card">
+        <div class="stat-number" id="total-articles">0</div>
+        <div class="stat-label">Total Articles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="total-sources">0</div>
+        <div class="stat-label">Sources</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="last-updated">-</div>
+        <div class="stat-label">Last Updated</div>
+      </div>
+    </div>
+    
+    <div id="source-stats" class="source-stats" style="display: none;"></div>
+    
+    <div id="news-container">
+      <div class="empty-state">
+        <h3>📰 No News Yet</h3>
+        <p>Click "Scrape All Sources" to fetch the latest AI news from multiple sources</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentNewsData = null;
+    let filteredNews = [];
+    
+    async function scrapeAllSources() {
+      const scrapeBtn = document.querySelector('.btn');
+      const scrapeText = document.getElementById('scrape-text');
+      const status = document.getElementById('status');
+      
+      // Update UI
+      scrapeBtn.disabled = true;
+      scrapeText.innerHTML = '<span class="loading-spinner"></span> Scraping...';
+      status.className = 'status loading';
+      status.style.display = 'block';
+      status.textContent = '🔄 Scraping all AI news sources... This may take a few moments.';
+      
+      try {
+        // Call the universal scraper API
+        const response = await fetch('/api/universal-scrape');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const newsData = await response.json();
+        currentNewsData = newsData;
+        filteredNews = newsData.combined_articles || [];
+        displayNews(filteredNews);
+        
+        status.className = 'status success';
+        status.textContent = `✅ Successfully scraped ${newsData.total_articles} articles from ${newsData.total_sources} sources!`;
+        
+      } catch (error) {
+        status.className = 'status error';
+        status.textContent = `❌ Error: ${error.message}`;
+      } finally {
+        scrapeBtn.disabled = false;
+        scrapeText.textContent = '🔍 Scrape All Sources';
+      }
+    }
+    
+    function displayNews(articles) {
+      const container = document.getElementById('news-container');
+      const stats = document.getElementById('stats');
+      const sourceStats = document.getElementById('source-stats');
+      
+      if (!articles || articles.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3>📰 No Articles Found</h3>
+            <p>No articles match your current filters. Try adjusting the search or source filters.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Update main stats
+      document.getElementById('total-articles').textContent = articles.length;
+      document.getElementById('total-sources').textContent = currentNewsData.total_sources;
+      document.getElementById('last-updated').textContent = new Date(currentNewsData.scraped_at).toLocaleString();
+      stats.style.display = 'grid';
+      
+      // Update source-specific stats
+      if (currentNewsData.sources) {
+        const sourceStatsHTML = Object.values(currentNewsData.sources)
+          .filter(source => source.success)
+          .map(source => `
+            <div class="source-stat">
+              <div class="source-name">${source.source_name}</div>
+              <div class="source-count">${source.total_articles}</div>
+            </div>
+          `).join('');
+        
+        sourceStats.innerHTML = sourceStatsHTML;
+        sourceStats.style.display = 'grid';
+      }
+      
+      // Create news grid
+      const newsHTML = articles.map(article => `
+        <div class="news-card">
+          <div class="news-source">${article.source}</div>
+          <h3 class="news-title">${article.title}</h3>
+          <div class="news-meta">
+            <span>👤 ${article.author}</span>
+            <span>📅 ${article.date}</span>
+          </div>
+          ${article.excerpt ? `<p class="news-excerpt">${article.excerpt}</p>` : ''}
+          ${article.link ? `<a href="${article.link}" target="_blank" class="news-link">🔗 Read Full Article →</a>` : ''}
+        </div>
+      `).join('');
+      
+      container.innerHTML = `
+        <div class="news-grid">
+          ${newsHTML}
+        </div>
+      `;
+    }
+    
+    function filterNews() {
+      const searchTerm = document.getElementById('search-filter').value.toLowerCase();
+      const sourceFilter = document.getElementById('source-filter').value;
+      
+      if (!currentNewsData || !currentNewsData.combined_articles) {
+        return;
+      }
+      
+      filteredNews = currentNewsData.combined_articles.filter(article => {
+        const matchesSearch = !searchTerm || 
+          article.title.toLowerCase().includes(searchTerm) ||
+          (article.excerpt && article.excerpt.toLowerCase().includes(searchTerm)) ||
+          article.author.toLowerCase().includes(searchTerm);
+        
+        const matchesSource = !sourceFilter || article.source === sourceFilter;
+        
+        return matchesSearch && matchesSource;
+      });
+      
+      displayNews(filteredNews);
+    }
+    
+    function clearFilters() {
+      document.getElementById('search-filter').value = '';
+      document.getElementById('source-filter').value = '';
+      if (currentNewsData && currentNewsData.combined_articles) {
+        filteredNews = currentNewsData.combined_articles;
+        displayNews(filteredNews);
+      }
+    }
+    
+    function loadFromFile() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const data = JSON.parse(e.target.result);
+              currentNewsData = data;
+              filteredNews = data.combined_articles || data.articles || [];
+              displayNews(filteredNews);
+              
+              const status = document.getElementById('status');
+              status.className = 'status success';
+              status.style.display = 'block';
+              status.textContent = `✅ Loaded ${filteredNews.length} articles from file!`;
+            } catch (error) {
+              const status = document.getElementById('status');
+              status.className = 'status error';
+              status.style.display = 'block';
+              status.textContent = `❌ Error loading file: ${error.message}`;
+            }
+          };
+          reader.readAsText(file);
+        }
+      };
+      input.click();
+    }
+    
+    function clearNews() {
+      currentNewsData = null;
+      filteredNews = [];
+      document.getElementById('news-container').innerHTML = `
+        <div class="empty-state">
+          <h3>📰 No News Yet</h3>
+          <p>Click "Scrape All Sources" to fetch the latest AI news from multiple sources</p>
+        </div>
+      `;
+      document.getElementById('stats').style.display = 'none';
+      document.getElementById('source-stats').style.display = 'none';
+      document.getElementById('status').style.display = 'none';
+    }
+    
+    function exportToJSON() {
+      if (!currentNewsData) {
+        alert('No news data to export!');
+        return;
+      }
+      
+      const dataStr = JSON.stringify(currentNewsData, null, 2);
+      const dataBlob = new Blob([dataStr], {type: 'application/json'});
+      const url = URL.createObjectURL(dataBlob);
+      
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `multi_source_ai_news_${new Date().toISOString().split('T')[0]}.json`;
+      link.click();
+      
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
