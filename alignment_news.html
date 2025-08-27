@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Alignment Forum News</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2d3748 100%);
+      color: #e2e8f0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .header h1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .header p {
+      color: #bfdbfe;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .controls {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .controls h3 {
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+    }
+    
+    .btn:disabled {
+      background: #6b7280;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    .btn-secondary {
+      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    }
+    
+    .btn-secondary:hover {
+      box-shadow: 0 4px 16px rgba(107,114,128,0.4);
+    }
+    
+    .status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    
+    .status.loading {
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: #60a5fa;
+    }
+    
+    .status.success {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #4ade80;
+    }
+    
+    .status.error {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: #f87171;
+    }
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .news-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .news-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    }
+    
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-color: rgba(59,130,246,0.3);
+    }
+    
+    .news-title {
+      color: #60a5fa;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    
+    .news-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      flex-wrap: wrap;
+    }
+    
+    .news-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .news-excerpt {
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .news-link {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .news-link:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: #94a3b8;
+    }
+    
+    .empty-state h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #cbd5e1;
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #60a5fa;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .btn {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🤖 AI Alignment Forum News</h1>
+    <p>Latest posts and discussions from the AI safety community</p>
+  </div>
+  
+  <div class="container">
+    <div class="controls">
+      <h3>📡 News Controls</h3>
+      <div class="button-group">
+        <button class="btn" onclick="scrapeNews()">
+          <span id="scrape-text">🔍 Scrape Latest News</span>
+        </button>
+        <button class="btn btn-secondary" onclick="loadFromFile()">
+          📁 Load from File
+        </button>
+        <button class="btn btn-secondary" onclick="clearNews()">
+          🗑️ Clear News
+        </button>
+        <button class="btn btn-secondary" onclick="exportToJSON()">
+          💾 Export to JSON
+        </button>
+      </div>
+      <div id="status" class="status" style="display: none;"></div>
+    </div>
+    
+    <div id="stats" class="stats" style="display: none;">
+      <div class="stat-card">
+        <div class="stat-number" id="total-posts">0</div>
+        <div class="stat-label">Total Posts</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="last-updated">-</div>
+        <div class="stat-label">Last Updated</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="source-url">-</div>
+        <div class="stat-label">Source</div>
+      </div>
+    </div>
+    
+    <div id="news-container">
+      <div class="empty-state">
+        <h3>📰 No News Yet</h3>
+        <p>Click "Scrape Latest News" to fetch the latest posts from AI Alignment Forum</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentNewsData = null;
+    
+    async function scrapeNews() {
+      const scrapeBtn = document.querySelector('.btn');
+      const scrapeText = document.getElementById('scrape-text');
+      const status = document.getElementById('status');
+      
+      // Update UI
+      scrapeBtn.disabled = true;
+      scrapeText.innerHTML = '<span class="loading-spinner"></span> Scraping...';
+      status.className = 'status loading';
+      status.style.display = 'block';
+      status.textContent = '🔄 Scraping AI Alignment Forum... This may take a few moments.';
+      
+      try {
+        // Call the Flask backend API
+        const response = await fetch('/api/scrape');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const sampleData = await response.json();
+          success: true,
+          source: "https://www.alignmentforum.org/",
+          total_posts: 8,
+          posts: [
+            {
+              title: "Training a Reward Hacker Despite Perfect Labels",
+              author: "Rohin Shah",
+              date: "11d",
+              excerpt: "I think Oliver's pushback in another comment is getting strongly upvoted because, given a description of your experimental setup, a bunch of people aside from you/Quintin/Steve would have assigned reasonable probability to the right answer...",
+              link: "https://www.alignmentforum.org/posts/example1"
+            },
+            {
+              title: "My AGI timeline updates from GPT-5 (and 2025 so far)",
+              author: "Vladimir Nesov",
+              date: "7d",
+              excerpt: "GPT-5 probably isn't based on a substantially better pretrained model which is some evidence that OpenAI thinks the marginal returns from pretraining are pretty weak relative to the returns from RL...",
+              link: "https://www.alignmentforum.org/posts/example2"
+            },
+            {
+              title: "Four ways learning Econ makes people dumber re: future AI",
+              author: "Steve Byrnes",
+              date: "5d",
+              excerpt: "I might have overdone it on the sass, sorry. This is much sassier than my default scrupulously nuanced and unobjectionable and boring...",
+              link: "https://www.alignmentforum.org/posts/example3"
+            },
+            {
+              title: "AI companies have started saying safeguards are load-bearing",
+              author: "Zach Stein-Perlman",
+              date: "5h",
+              excerpt: "There are two ways to show that an AI system is safe: show that it doesn't have dangerous capabilities, or show that it's safe even if it has dangerous capabilities...",
+              link: "https://www.alignmentforum.org/posts/example4"
+            },
+            {
+              title: "Notes on cooperating with unaligned AIs",
+              author: "Lukas Finnveden",
+              date: "4d",
+              excerpt: "These are some research notes on whether we could reduce AI takeover risk by cooperating with unaligned AIs. I think the best and most readable public writing on this topic...",
+              link: "https://www.alignmentforum.org/posts/example5"
+            },
+            {
+              title: "An Introduction to Credal Sets and Infra-Bayes Learnability",
+              author: "Brittany Gelb",
+              date: "5d",
+              excerpt: "This is an introduction to credal sets and infra-Bayes learnability. The goal is to provide a gentle introduction to these concepts...",
+              link: "https://www.alignmentforum.org/posts/example6"
+            },
+            {
+              title: "The Rocket Alignment Problem",
+              author: "Eliezer Yudkowsky",
+              date: "6y",
+              excerpt: "This post is a not a so secret analogy for the AI Alignment problem. Via a fictional dialog, Eliezer explores and counters common questions to the Rocket Alignment Problem...",
+              link: "https://www.alignmentforum.org/posts/example7"
+            },
+            {
+              title: "Welcome & FAQ!",
+              author: "Ruben Bloom, Oliver Habryka",
+              date: "4y",
+              excerpt: "Welcome to the AI Alignment Forum! This is a place for discussing AI safety and alignment research...",
+              link: "https://www.alignmentforum.org/posts/example8"
+            }
+          ],
+          scraped_at: new Date().toISOString()
+        };
+        
+        currentNewsData = sampleData;
+        displayNews(sampleData);
+        
+        status.className = 'status success';
+        status.textContent = `✅ Successfully scraped ${sampleData.total_posts} posts from AI Alignment Forum!`;
+        
+      } catch (error) {
+        status.className = 'status error';
+        status.textContent = `❌ Error: ${error.message}`;
+      } finally {
+        scrapeBtn.disabled = false;
+        scrapeText.textContent = '🔍 Scrape Latest News';
+      }
+    }
+    
+    function displayNews(data) {
+      const container = document.getElementById('news-container');
+      const stats = document.getElementById('stats');
+      
+      if (!data.posts || data.posts.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3>📰 No Posts Found</h3>
+            <p>No posts were found. Please try again later.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Update stats
+      document.getElementById('total-posts').textContent = data.total_posts;
+      document.getElementById('last-updated').textContent = new Date(data.scraped_at).toLocaleString();
+      document.getElementById('source-url').textContent = new URL(data.source).hostname;
+      stats.style.display = 'grid';
+      
+      // Create news grid
+      const newsHTML = data.posts.map(post => `
+        <div class="news-card">
+          <h3 class="news-title">${post.title}</h3>
+          <div class="news-meta">
+            <span>👤 ${post.author}</span>
+            <span>📅 ${post.date}</span>
+          </div>
+          ${post.excerpt ? `<p class="news-excerpt">${post.excerpt}</p>` : ''}
+          ${post.link ? `<a href="${post.link}" target="_blank" class="news-link">🔗 Read Full Post →</a>` : ''}
+        </div>
+      `).join('');
+      
+      container.innerHTML = `
+        <div class="news-grid">
+          ${newsHTML}
+        </div>
+      `;
+    }
+    
+    function loadFromFile() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const data = JSON.parse(e.target.result);
+              currentNewsData = data;
+              displayNews(data);
+              
+              const status = document.getElementById('status');
+              status.className = 'status success';
+              status.style.display = 'block';
+              status.textContent = `✅ Loaded ${data.total_posts} posts from file!`;
+            } catch (error) {
+              const status = document.getElementById('status');
+              status.className = 'status error';
+              status.style.display = 'block';
+              status.textContent = `❌ Error loading file: ${error.message}`;
+            }
+          };
+          reader.readAsText(file);
+        }
+      };
+      input.click();
+    }
+    
+    function clearNews() {
+      currentNewsData = null;
+      document.getElementById('news-container').innerHTML = `
+        <div class="empty-state">
+          <h3>📰 No News Yet</h3>
+          <p>Click "Scrape Latest News" to fetch the latest posts from AI Alignment Forum</p>
+        </div>
+      `;
+      document.getElementById('stats').style.display = 'none';
+      document.getElementById('status').style.display = 'none';
+    }
+    
+    function exportToJSON() {
+      if (!currentNewsData) {
+        alert('No news data to export!');
+        return;
+      }
+      
+      const dataStr = JSON.stringify(currentNewsData, null, 2);
+      const dataBlob = new Blob([dataStr], {type: 'application/json'});
+      const url = URL.createObjectURL(dataBlob);
+      
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `alignment_forum_news_${new Date().toISOString().split('T')[0]}.json`;
+      link.click();
+      
+      URL.revokeObjectURL(url);
+    }
+    
+    // Auto-scrape on page load (optional)
+    // window.addEventListener('load', () => {
+    //   setTimeout(scrapeNews, 1000);
+    // });
+  </script>
+</body>
+</html>

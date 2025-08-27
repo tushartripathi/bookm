@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "source": "https://www.alignmentforum.org/",
+  "total_posts": 10,
+  "posts": [
+    {
+      "title": "Welcome & FAQ!",
+      "author": "Unknown",
+      "date": "4y",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/Yp2vYb4zHXEeoTkJc/welcome-and-faq",
+      "scraped_at": "2025-08-27T23:25:29.204590"
+    },
+    {
+      "title": "Attaching requirements to model releases has serious downsides (relative to a different deadline for these requirements)",
+      "author": "Unknown",
+      "date": "1h",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/Eh7WdKTrpLch5Kvkz/attaching-requirements-to-model-releases-has-serious",
+      "scraped_at": "2025-08-27T23:25:29.205072"
+    },
+    {
+      "title": "AI companies have started saying safeguards are load-bearing",
+      "author": "Unknown",
+      "date": "5h",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/Bz2gPtqRJJDWyKxnX/ai-companies-have-started-saying-safeguards-are-load-bearing",
+      "scraped_at": "2025-08-27T23:25:29.205460"
+    },
+    {
+      "title": "New Paper on Reflective Oracles & Grain of Truth Problem",
+      "author": "Unknown",
+      "date": "2d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/PuGxDb27xhRPBPbiv/new-paper-on-reflective-oracles-and-grain-of-truth-problem",
+      "scraped_at": "2025-08-27T23:25:29.205798"
+    },
+    {
+      "title": "Notes on cooperating with unaligned AIs",
+      "author": "Unknown",
+      "date": "4d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/oLzoHA9ZtF2ygYgx4/notes-on-cooperating-with-unaligned-ais",
+      "scraped_at": "2025-08-27T23:25:29.206165"
+    },
+    {
+      "title": "One more reason for AI capable of independent moral reasoning: alignment itself and cause prioritisation",
+      "author": "Unknown",
+      "date": "5d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/tYCinFKtbBEg42gy9/one-more-reason-for-ai-capable-of-independent-moral",
+      "scraped_at": "2025-08-27T23:25:29.206716"
+    },
+    {
+      "title": "Doing good... best?",
+      "author": "Unknown",
+      "date": "5d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/3EqToCdzMXcmKd2ct/doing-good-best",
+      "scraped_at": "2025-08-27T23:25:29.207390"
+    },
+    {
+      "title": "With enough knowledge, any conscious agent acts morally",
+      "author": "Unknown",
+      "date": "5d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/EbRLty44fFtoWduj4/with-enough-knowledge-any-conscious-agent-acts-morally",
+      "scraped_at": "2025-08-27T23:25:29.208006"
+    },
+    {
+      "title": "An Introduction to Credal Sets and Infra-Bayes Learnability",
+      "author": "Unknown",
+      "date": "5d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/rkhaRnAc6dLzQT2sJ/an-introduction-to-credal-sets-and-infra-bayes-learnability-1",
+      "scraped_at": "2025-08-27T23:25:29.208341"
+    },
+    {
+      "title": "Proof Section to an Introduction to Credal Sets and Infra-Bayes Learnability",
+      "author": "Unknown",
+      "date": "6d",
+      "excerpt": "",
+      "link": "https://www.alignmentforum.org/posts/pFtCk9xezCssuzvjs/proof-section-to-an-introduction-to-credal-sets-and-infra",
+      "scraped_at": "2025-08-27T23:25:29.208659"
+    }
+  ],
+  "scraped_at": "2025-08-27T23:25:29.208661"
+}
